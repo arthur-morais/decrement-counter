@@ -119,39 +119,28 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            const SizedBox(
-              height: 16,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
-              child: TextButton(
-                onPressed: _decrementCounter,
-                child: const Text(
-                  'Decrementar',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Colors.green,
-              ),
-              child: TextButton(
-                onPressed: _incrementCounter,
-                child: const Text(
-                  'Incrementar',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-              ),
-            ),
           ],
         ),
       ),
+      floatingActionButton: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: _incrementCounter,
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(
+            width: 16,
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.red,
+            onPressed: _decrementCounter,
+            child: const Icon(Icons.remove),
+          ),
+        ],
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
